@@ -79,11 +79,12 @@
 <script>
     window.onload = function () {
 
-        Alert("1");
+        Alert("B");
 
         document
             .querySelector("#markerA")
             .addEventListener("markerFound", function () {
+                Alert("A");
                 document
                     .querySelector("#imageA")
                     .addEventListener("click", function () {
@@ -93,6 +94,7 @@
         document
             .querySelector("#markerA")
             .addEventListener("markerLost", function () {
+                Alert("B");
                 document.querySelector("#imageA").removeEventListener('click', handleClick);
             });
 
