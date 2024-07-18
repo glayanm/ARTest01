@@ -33,7 +33,7 @@
                      class="clickable"
                      gesture-handler></a-image>
         </a-marker>
-        <!--<a-marker id="markerWallet"
+        <a-marker id="markerWallet"
                   type="pattern"
                   preset="custom"
                   url="assets/pattern-27022.patt"
@@ -43,9 +43,11 @@
             <a-image src="#assetImg"
                      scale="1 1 1"
                      rotation="-90 0 0"
+                     id="imageB"
+                     class="clickable"
                      gesture-handler></a-image>
         </a-marker>
-        <a-marker id="markerGreen"
+        <!--<a-marker id="markerGreen"
                   type="pattern"
                   preset="custom"
                   url="assets/pattern-S__21790729.patt"
@@ -81,6 +83,10 @@
             .querySelector("#imageA")
             .addEventListener("click", function () {
                 window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
+        document
+            .querySelector("#imageB")
+            .addEventListener("click", function () {
+                window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
                 //alert("Hi there!");
             });
     };
