@@ -28,11 +28,12 @@
             <a-image src="#MCat"
                      scale="1 1 1"
                      rotation="-90 0 0"
+                     id="imageA"
                      gesture-handler></a-image>
             <a-text value="喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵"
                     position="0 0.5 -0.5"></a-text>
         </a-marker>
-        <a-marker id="markerWallet"
+        <!--<a-marker id="markerWallet"
                   type="pattern"
                   preset="custom"
                   url="assets/pattern-27022.patt"
@@ -67,19 +68,25 @@
                      scale="1 1 1"
                      rotation="-90 0 0"
                      gesture-handler></a-image>
-        </a-marker>
-        <!--<a-marker id="markerB"
-          type="pattern"
-          preset="custom"
-          url="assets/pattern-wallet.patt"
-          raycaster="objects: .clickable"
-          emitevents="true"
-          cursor="fuse: false; rayOrigin: mouse;">
-    <a-image src="#MCat"  scale="1 1 1"
-             rotation="-90 0 0"
-             gesture-handler></a-image>-->
-        <!--</a-marker>-->
+        </a-marker>-->
         <a-entity camera></a-entity>
     </a-scene>
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const imageA = document.getElementById('imageA');
+        const imageB = document.getElementById('imageB');
+
+        imageA.addEventListener('click', function () {
+            window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
+        });
+
+        imageB.addEventListener('click', function () {
+            window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
+        });
+
+        // 為其他圖片添加類似的事件處理器
+    });
+</script>
