@@ -2,14 +2,14 @@
 <html>
 <head>
     <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>-->
-    <!--<script src="js/aframe 1.0.4 .min.js"></script>
+    <script src="js/aframe 1.0.4 .min.js"></script>
     <script src="js/ar-js-org ar.js"></script>
     <script src="js/ar-js-org studio-backend gesture-detector.js"></script>
-    <script src="js/ar-js-org studio-backend gesture-handler.js"></script>-->
+    <script src="js/ar-js-org studio-backend gesture-handler.js"></script>
 
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>-->
     <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
 </head>
 
 <body style="margin: 0; overflow: hidden;">
@@ -88,39 +88,36 @@
             window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
         }
 
-        // 定義點擊事件處理器
+
         function handleClickB() {
             window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
         }
 
         alert("4");
 
-        document
-            .querySelector("#markerA")
-            .addEventListener("markerFound", function () {
-                document
-                    .querySelector("#imageA")
-                    .addEventListener("click", handleClickA);
-            });
+        // 綁定 markerA 的事件
+        var markerA = document.querySelector("#markerA");
+        var imageA = document.querySelector("#imageA");
 
-        document
-            .querySelector("#markerA")
-            .addEventListener("markerLost", function () {
-                document.querySelector("#imageA").removeEventListener('click', handleClickA);
-            });
+        markerA.addEventListener("markerFound", function () {
+            imageA.addEventListener("click", handleClickA);
+        });
 
-        document
-            .querySelector("#imageB")
-            .addEventListener("markerFound", function () {
-                document
-                    .querySelector("#imageA")
-                    .addEventListener("click", handleClickB);
+        markerA.addEventListener("markerLost", function () {
+            imageA.removeEventListener("click", handleClickA);
+        });
 
-            });
-        document
-            .querySelector("#imageB")
-            .addEventListener("markerLost", function () {
-                document.querySelector("#imageA").removeEventListener('click', handleClickB);
-            });
+        // 綁定 markerB 的事件
+        var markerB = document.querySelector("#markerB");
+        var imageB = document.querySelector("#imageB");
+
+        markerB.addEventListener("markerFound", function () {
+            imageB.addEventListener("click", handleClickB);
+        });
+
+        markerB.addEventListener("markerLost", function () {
+            imageB.removeEventListener("click", handleClickB);
+        });
+    };
     };
 </script>
