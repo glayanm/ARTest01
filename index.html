@@ -83,22 +83,30 @@
 <script>
     window.onload = function () {
 
+        // 定義點擊事件處理器
+        function handleClickA() {
+            window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
+        }
 
-        alert("3");
+        // 定義點擊事件處理器
+        function handleClickB() {
+            window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
+        }
+
+        alert("4");
 
         document
             .querySelector("#markerA")
             .addEventListener("markerFound", function () {
                 document
                     .querySelector("#imageA")
-                    .addEventListener("click", function () {
-                        window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
+                    .addEventListener("click", handleClickA);
                     });
             });
         document
             .querySelector("#markerA")
             .addEventListener("markerLost", function () {
-                document.querySelector("#imageA").removeEventListener('click', handleClick);
+                document.querySelector("#imageA").removeEventListener('click', handleClickA);
             });
 
         document
@@ -106,14 +114,13 @@
             .addEventListener("markerFound", function () {
                 document
                     .querySelector("#imageA")
-                    .addEventListener("click", function () {
-                        window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
+                    .addEventListener("click", handleClickB);
                     });
             });
         document
             .querySelector("#imageB")
             .addEventListener("markerLost", function () {
-                document.querySelector("#imageA").removeEventListener('click', handleClick);
+                document.querySelector("#imageA").removeEventListener('click', handleClickB);
             });
     };
 </script>
