@@ -30,10 +30,8 @@
                      scale="1 1 1"
                      rotation="-90 0 0"
                      id="imageA"
-                     clickhandler
+                     class="clickable"
                      gesture-handler></a-image>
-            <a-text value="喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵"
-                    position="0 0.5 -0.5"></a-text>
         </a-marker>
         <!--<a-marker id="markerWallet"
                   type="pattern"
@@ -78,21 +76,30 @@
 
 <script>
 
+    window.onload = function () {
+        document
+            .querySelector("#imageA")
+            .addEventListener("click", function () {
+                // here you can change also a-scene or a-entity properties, like
+                // changing your 3D model source, size, position and so on
+                // or you can just open links, trigger actions...
+                alert("Hi there!");
+            });
+    };
+    //document.addEventListener('DOMContentLoaded', function () {
+    //    //const imageA = document.getElementById('imageA');
+    //    //const imageB = document.getElementById('imageB');
 
-    document.addEventListener('DOMContentLoaded', function () {
-        //const imageA = document.getElementById('imageA');
-        //const imageB = document.getElementById('imageB');
+    //    document.querySelector('#imageA').addEventListener('click', function () {
+    //        //Alert("imageA");
+    //        window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
+    //    });
 
-        document.querySelector('#imageA').addEventListener('click', function () {
-            Alert("imageA");
-            //window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
-        });
+    //    imageB.addEventListener('click', function () {
+    //        window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
+    //    });
 
-        imageB.addEventListener('click', function () {
-            window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
-        });
-
-        // 為其他圖片添加類似的事件處理器
-    });
+    //    // 為其他圖片添加類似的事件處理器
+    //});
 
 </script>
