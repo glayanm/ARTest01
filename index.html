@@ -80,12 +80,11 @@
     window.onload = function () {
 
 
-        alert("2");
+        alert("3");
 
         document
             .querySelector("#markerA")
             .addEventListener("markerFound", function () {
-                alert("A1");
                 document
                     .querySelector("#imageA")
                     .addEventListener("click", function () {
@@ -95,14 +94,12 @@
         document
             .querySelector("#markerA")
             .addEventListener("markerLost", function () {
-                alert("A2");
                 document.querySelector("#imageA").removeEventListener('click', handleClick);
             });
 
         document
             .querySelector("#imageB")
             .addEventListener("markerFound", function () {
-                alert("B1");
                 document
                     .querySelector("#imageA")
                     .addEventListener("click", function () {
@@ -112,7 +109,6 @@
         document
             .querySelector("#imageB")
             .addEventListener("markerLost", function () {
-                alert("B2");
                 document.querySelector("#imageA").removeEventListener('click', handleClick);
             });
     };
