@@ -77,33 +77,36 @@
 </html>
 
 <script>
-
     window.onload = function () {
+
         document
-            .querySelector("#imageA")
-            .addEventListener("click", function () {
-                window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
+            .querySelector("#markerA")
+            .addEventListener("markerFound", function () {
+                document
+                    .querySelector("#imageA")
+                    .addEventListener("click", function () {
+                        window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
+                    });
+            });
+        document
+            .querySelector("#markerA")
+            .addEventListener("markerLost", function () {
+                document.querySelector("#imageA").removeEventListener('click', handleClick);
+            });
+
+        document
+            .querySelector("#imageB")
+            .addEventListener("markerFound", function () {
+                document
+                    .querySelector("#imageA")
+                    .addEventListener("click", function () {
+                        window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
+                    });
             });
         document
             .querySelector("#imageB")
-            .addEventListener("click", function () {
-                window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
+            .addEventListener("markerLost", function () {
+                document.querySelector("#imageA").removeEventListener('click', handleClick);
             });
     };
-    //document.addEventListener('DOMContentLoaded', function () {
-    //    //const imageA = document.getElementById('imageA');
-    //    //const imageB = document.getElementById('imageB');
-
-    //    document.querySelector('#imageA').addEventListener('click', function () {
-    //        //Alert("imageA");
-    //        window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
-    //    });
-
-    //    imageB.addEventListener('click', function () {
-    //        window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
-    //    });
-
-    //    // 為其他圖片添加類似的事件處理器
-    //});
-
 </script>
