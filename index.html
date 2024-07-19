@@ -189,27 +189,9 @@
 
 <script>
     window.onload = function () {
-        function handleClickA() {
-            window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法項鍊';
-        }
+        alert("Test version 18");
 
-        function handleClickB() {
-            window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?黑魔法護身符';
-        }
-
-        alert("Test version 17");
-
-        var markerA = document.querySelector("#markerA");
-        var imageA = document.querySelector("#imageA");
-
-        markerA.addEventListener("markerFound", function () {
-            imageA.addEventListener("click", handleClickA);
-        });
-
-        markerA.addEventListener("markerLost", function () {
-            imageA.removeEventListener("click", handleClickA);
-        });
-
+        ClickToLine("#markerA", "#imageA", "黑魔法項鍊");
         ClickToLine("#markerB", "#imageB", "黑魔法護身符");
 
     };
