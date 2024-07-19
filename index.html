@@ -48,9 +48,10 @@
             <a-image id="imageB" src="assets/assetB.jpg"
                      scale="2 2 2"
                      rotation="-90 0 0"
+                     class="clickable"
                      gesture-handler></a-image>
         </a-marker>
-      
+
         <a-marker id="markerC"
                   type="pattern"
                   preset="custom"
@@ -101,7 +102,7 @@
                      scale="2 2 2"
                      rotation="-90 0 0"
                      gesture-handler></a-image>
-        </a-marker>        
+        </a-marker>
 
         <a-marker id="markerU"
                   type="pattern"
@@ -114,7 +115,7 @@
                      scale="2 2 2"
                      rotation="-90 0 0"
                      gesture-handler></a-image>
-        </a-marker>    
+        </a-marker>
 
         <a-marker id="markerV"
                   type="pattern"
@@ -127,7 +128,7 @@
                      scale="2 2 2"
                      rotation="-90 0 0"
                      gesture-handler></a-image>
-        </a-marker>  
+        </a-marker>
 
         <a-marker id="markerW"
                   type="pattern"
@@ -140,7 +141,7 @@
                      scale="2 2 2"
                      rotation="-90 0 0"
                      gesture-handler></a-image>
-        </a-marker> 
+        </a-marker>
 
         <a-marker id="markerX"
                   type="pattern"
@@ -153,7 +154,7 @@
                      scale="2 2 2"
                      rotation="-90 0 0"
                      gesture-handler></a-image>
-        </a-marker>    
+        </a-marker>
 
         <a-marker id="markerY"
                   type="pattern"
@@ -166,7 +167,7 @@
                      scale="2 2 2"
                      rotation="-90 0 0"
                      gesture-handler></a-image>
-        </a-marker>    
+        </a-marker>
 
         <a-marker id="markerZ"
                   type="pattern"
@@ -179,8 +180,8 @@
                      scale="2 2 2"
                      rotation="-90 0 0"
                      gesture-handler></a-image>
-        </a-marker>           
-   
+        </a-marker>
+
         <a-entity camera></a-entity>
     </a-scene>
 </body>
@@ -209,15 +210,26 @@
             imageA.removeEventListener("click", handleClickA);
         });
 
-        var markerB = document.querySelector("#markerB");
-        var imageB = document.querySelector("#imageB");
+        ClickToLine("#markerB", "#imageB", 黑魔法護身符);
 
-        markerB.addEventListener("markerFound", function () {
-            imageB.addEventListener("click", handleClickB);
-        });
-
-        markerB.addEventListener("markerLost", function () {
-            imageB.removeEventListener("click", handleClickB);
-        });
     };
+
+    function ClickToLine(makerObj, imageObj, lineUrl) {
+
+        function handleClick() {
+            window.location.href = 'https://line.me/R/oaMessage/@981rhecr/?' + lineUrl;
+        }
+
+        var marker = document.querySelector(makerObj);
+        var image = document.querySelector(imageObj);
+
+        marker.addEventListener("markerFound", function () {
+            image.addEventListener("click", handleClick);
+        });
+
+        marker.addEventListener("markerLost", function () {
+            image.removeEventListener("click", handleClick);
+        });
+
+    }
 </script>
